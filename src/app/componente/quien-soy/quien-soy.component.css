@@ -1,0 +1,8 @@
+.quien-soy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.autor-card{
+    max-width: 400px;
+}
