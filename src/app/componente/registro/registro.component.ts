@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-registro',
+  templateUrl: './registro.component.html',
+  styleUrls: ['./registro.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegistroComponent implements OnInit {
+  
   form: FormGroup;
   public loginInvalid = false;
   private formSubmitAttempt = false;
@@ -16,24 +17,22 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
     this.form = this.fb.group({
-      username: ['', Validators.email],
-      password: ['', Validators.required]
+      email: ['', Validators.email],
+      password: ['', Validators.required],
+      confirmPassword: ['', ]
     });
    }
-
-  onSubmit(): void {
+  ngOnInit(): void {
+  }
+  onSubmit(){
     if(this.form && this.form.valid){
       let email = this.form.get('email');
       let pass = this.form.get('password');
-      this.auth.signIn(email?.value, pass?.value).then((val)=>{
+      this.auth.register(email?.value, pass?.value).subscribe((val)=>{
         if(val === true){
-          this.router.navigate(['home']);
+          this.router.navigate(['login']);
         }
       });
     }
-
   }
-  ngOnInit(): void {
-  }
-
 }

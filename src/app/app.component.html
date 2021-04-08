@@ -1,11 +1,57 @@
-<br><br><br><br>
-<app-home></app-home>
-<br>
-<app-login></app-login>
-<br>
-<app-quien-soy></app-quien-soy>
+<div class="application-container" *ngIf="shouldRun">
+    <mat-toolbar color="primary" class="application-toolbar"> 
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="app-name">Sala de Juegos</h1>
+        <div class="login-menu">
+
+        </div>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="application-sidenav-container">
+        <mat-sidenav #snav>
+            <mat-nav-list>
+                <mat-list-item>
+                    <a [routerLink]="['/home']" (click)="snav.toggle()" >
+                        <mat-icon>home</mat-icon>Home
+                    </a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a [routerLink]="['/quien-soy']" (click)="snav.toggle()">
+                        <mat-icon>face</mat-icon>Quien Soy
+                    </a>
+                </mat-list-item>
+                <h2 matLine>Juegos</h2>
+                <mat-list-item>
+                    <a (click)="snav.toggle(); signOut();">
+                        <mat-icon>logout</mat-icon>
+                        Logout
+                    </a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a [routerLink]="['/login']" (click)="snav.toggle()">
+                        <mat-icon>login</mat-icon>
+                        Login
+                    </a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a [routerLink]="['/registro']" (click)="snav.toggle()">
+                        <mat-icon>how_to_reg</mat-icon>
+                        Registro
+                    </a>
+                </mat-list-item>
+    
+           </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+
+            <router-outlet></router-outlet>
 
 
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
 
-
-<router-outlet></router-outlet>
+<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
