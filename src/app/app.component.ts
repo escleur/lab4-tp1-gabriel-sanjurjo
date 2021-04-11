@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'lab4-tp1-gabriel-sanjurjo';
   shouldRun = true;
+  logUser = null;
   public userAuth: Subscription;
   //public usuario: Usuario | null;
   constructor(public auth: AuthService, private router: Router){
@@ -21,10 +22,11 @@ export class AppComponent {
     );*/
     this.userAuth = this.auth.signedIn.subscribe((user) => {
       if (user) {
-         console.log(user); 
-        //this.getTaskData();
+         console.log(user);
+         this.logUser = user; 
       } else {
-          this.router.navigate([ 'signin' ]);
+          this.logUser = null;
+          this.router.navigate([ 'login' ]);
       }
      });
 

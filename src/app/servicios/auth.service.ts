@@ -32,6 +32,7 @@ export class AuthService {
   register(email: string, password: string): Observable<boolean> {
     try {
       if (!email || !password) throw new Error('Invalid email and/or password');
+      console.log(email,password);
       this.auth.createUserWithEmailAndPassword(email, password);
       return of(true);
     } catch (error) {

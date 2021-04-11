@@ -23,9 +23,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if(this.form && this.form.valid){
-      let email = this.form.get('email');
-      let pass = this.form.get('password');
-      this.auth.signIn(email?.value, pass?.value).then((val)=>{
+      const {username, password} = this.form.value;
+      this.auth.signIn(username, password).then((val)=>{
         if(val === true){
           this.router.navigate(['home']);
         }

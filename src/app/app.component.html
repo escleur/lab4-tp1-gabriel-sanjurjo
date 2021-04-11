@@ -23,19 +23,19 @@
                     </a>
                 </mat-list-item>
                 <h2 matLine>Juegos</h2>
-                <mat-list-item>
+                <mat-list-item *ngIf="logUser">
                     <a (click)="snav.toggle(); signOut();">
                         <mat-icon>logout</mat-icon>
                         Logout
                     </a>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item *ngIf="!logUser">
                     <a [routerLink]="['/login']" (click)="snav.toggle()">
                         <mat-icon>login</mat-icon>
                         Login
                     </a>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item *ngIf="!logUser">
                     <a [routerLink]="['/registro']" (click)="snav.toggle()">
                         <mat-icon>how_to_reg</mat-icon>
                         Registro

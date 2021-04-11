@@ -17,7 +17,7 @@ export class RegistroComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
     this.form = this.fb.group({
-      email: ['', Validators.email],
+      username: ['', Validators.email],
       password: ['', Validators.required],
       confirmPassword: ['', ]
     });
@@ -26,11 +26,11 @@ export class RegistroComponent implements OnInit {
   }
   onSubmit(){
     if(this.form && this.form.valid){
-      let email = this.form.get('email');
-      let pass = this.form.get('password');
-      this.auth.register(email?.value, pass?.value).subscribe((val)=>{
+      const {username, password} = this.form.value;
+      console.log("aca",username, password);
+      this.auth.register(username, password).subscribe((val)=>{
         if(val === true){
-          this.router.navigate(['login']);
+          //this.router.navigate(['login']);
         }
       });
     }
