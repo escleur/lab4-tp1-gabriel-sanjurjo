@@ -22,8 +22,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { RegistroComponent } from './componente/registro/registro.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ListadoRealtimeComponent } from './componente/listado-realtime/listado-realtime.component';
+import { ChatRealtimeComponent } from './componente/chat-realtime/chat-realtime.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { MatInputModule } from '@angular/material/input';
     LoginComponent,
     HomeComponent,
     QuienSoyComponent,
-    RegistroComponent
+    RegistroComponent,
+    ListadoRealtimeComponent,
+    ChatRealtimeComponent
   ],
   imports: [
     BrowserModule,

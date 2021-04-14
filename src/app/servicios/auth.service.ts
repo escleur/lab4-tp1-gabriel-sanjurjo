@@ -18,37 +18,16 @@ export class AuthService {
     );
   }
 
-  async signIn(email: string, password: string) {
-    try {
-      if (!email || !password) throw new Error('Invalid email and/or password');
-      await this.auth.signInWithEmailAndPassword(email, password);
-      return true;
-    } catch (error) {
-      console.log('Sign in failed', error);
-      return false;
-    }
+  async signIn(email: string, password: string): Promise<any> {
+      return await this.auth.signInWithEmailAndPassword(email, password);
   }
 
-  register(email: string, password: string): Observable<boolean> {
-    try {
-      if (!email || !password) throw new Error('Invalid email and/or password');
-      console.log(email,password);
-      this.auth.createUserWithEmailAndPassword(email, password);
-      return of(true);
-    } catch (error) {
-      console.log('Sign in failed', error);
-      return of(false);
-    }
+  async register(email: string, password: string): Promise<any>{
+      return await this.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  signOut(): Observable<boolean>{
-    try{
-      this.auth.signOut();
-      return of(true);
-    }catch(error){
-      console.log('Sign out failed', error);
-      return of(false);
-    }
+  async signOut(): Promise<any> {
+      return await this.auth.signOut();
   }
 
 

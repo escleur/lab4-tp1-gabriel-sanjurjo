@@ -27,12 +27,19 @@ export class RegistroComponent implements OnInit {
   onSubmit(){
     if(this.form && this.form.valid){
       const {username, password} = this.form.value;
-      console.log("aca",username, password);
-      this.auth.register(username, password).subscribe((val)=>{
-        if(val === true){
+      //console.log("aca",username, password);
+      this.auth.register(username, password)
+      .then((userCredential: any)=>{
+        let user = userCredential.user;
+        console.log("Usuario", user);
+
+      })
+      .catch ((error) => {
+        //console.log('Sign in failed', error);
+        alert(error.message);
+      })
+
           //this.router.navigate(['login']);
-        }
-      });
     }
   }
 }

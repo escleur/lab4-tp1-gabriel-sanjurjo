@@ -1,0 +1,18 @@
+
+Initial Chunk Files   | Names         |    Size
+main.js               | main          | 0 bytes
+polyfills.js          | polyfills     | 0 bytes
+runtime.js            | runtime       | 0 bytes
+styles.css, styles.js | styles        | 0 bytes
+vendor.js             | vendor        | 0 bytes
+
+| Initial Total | 0 bytes
+
+Lazy Chunk Files      | Names         |    Size
+firebase-auth.js      | firebase-auth | 0 bytes
+
+Build at: 2021-04-12T05:40:48.782Z - Hash: 43179faae8c86b36fa84 - Time: 13300ms
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+¨Desea terminar el trabajo por lotes (S/N)? ¨Desea terminar el trabajo por lotes (S/N)? 
