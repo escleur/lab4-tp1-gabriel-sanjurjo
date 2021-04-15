@@ -12,7 +12,8 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'quien-soy', component: QuienSoyComponent},
   {path:'registro', component: RegistroComponent},
-  {path: 'chat', component: ListadoRealtimeComponent}
+  {path: 'chat', component: ListadoRealtimeComponent},
+  { path: 'ppt', loadChildren: () => import('./ppt/ppt.module').then(m => m.PptModule) }
 
   //{path:'**', component: RegistroComponent}
 ];

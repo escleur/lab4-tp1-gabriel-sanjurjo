@@ -1,0 +1,20 @@
+h1{text-align: center; font-size: 3rem;padding: 1rem;}
+.juego{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.juego .visor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.juego .botonera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
