@@ -1,7 +1,18 @@
 h1{text-align: center; font-size: 3rem;padding: 1rem;}
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+h2{
+    text-align: center;
+}
 .juego{
-    width: 100%;
-    height: 80%;
+    margin: 3rem;
+    min-width: 800px;
+    max-width: 1500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,4 +28,57 @@ h1{text-align: center; font-size: 3rem;padding: 1rem;}
     flex-direction: row;
     justify-content: space-around;
 
+}
+.btn-tijeras, .btn-piedra, .btn-papel{
+    width: 100px;
+    height: 100px;
+}
+.btn-tijeras:hover, .btn-piedra:hover, .btn-papel:hover{
+    filter: hue-rotate(100deg);
+
+}
+
+.manoi, .manod{
+    margin-top:0px;
+    margin-bottom: 100px;
+
+}
+.sidechat{
+    margin: 3rem;
+}
+.ani{
+    animation-duration: 5s;
+    animation-name: updown;
+
+}
+
+@keyframes updown {
+    0% {
+        margin-top:0px;
+        margin-bottom: 100px;
+    }
+    15% {
+        margin-top:100px;
+        margin-bottom: 0px;
+    }
+    30% {
+        margin-top:0px;
+        margin-bottom: 100px;
+    }
+    45% {
+        margin-top:100px;
+        margin-bottom: 0px;
+    }
+    60% {
+        margin-top:0px;
+        margin-bottom: 100px;
+    }
+    75% {
+        margin-top:100px;
+        margin-bottom: 0px;
+    }
+    100% {
+        margin-top:0px;
+        margin-bottom: 100px;
+    }
 }

@@ -3,6 +3,7 @@ import { AuthService } from './servicios/auth.service';
 import { Subscription } from 'rxjs';
 import { Usuario } from './modelos/usuario';
 import { Router } from '@angular/router';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-root',
@@ -24,8 +25,10 @@ export class AppComponent {
       if (user) {
          console.log(user);
          this.logUser = user; 
+         localStorage.setItem('logUser',JSON.stringify(user));
       } else {
           this.logUser = null;
+          localStorage.removeItem('logUser');
           this.router.navigate([ 'login' ]);
       }
      });

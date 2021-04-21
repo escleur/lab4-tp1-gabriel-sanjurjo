@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './componente/login/login.component';
 import { HomeComponent } from './componente/home/home.component';
 import { QuienSoyComponent } from './componente/quien-soy/quien-soy.component';
-
+import { PptModule } from './ppt/ppt.module'
 //Firestore
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -24,6 +24,7 @@ import { MatListModule } from '@angular/material/list';
 import { RegistroComponent } from './componente/registro/registro.component';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ListadoRealtimeComponent } from './componente/listado-realtime/listado-realtime.component';
 import { ChatRealtimeComponent } from './componente/chat-realtime/chat-realtime.component';
 
@@ -53,6 +54,9 @@ import { ChatRealtimeComponent } from './componente/chat-realtime/chat-realtime.
     MatInputModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    PptModule
+
+
 
     // AngularFireModule.initializeApp(enviroment.firebase),
    // AngularFireDatabaseModule

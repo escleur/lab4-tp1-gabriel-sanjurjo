@@ -24,6 +24,11 @@
                 </mat-list-item>
                 <h2 matLine>Juegos</h2>
                 <mat-list-item *ngIf="logUser">
+                    <a [routerLink]="['/ppt']" (click)="snav.toggle()">           
+                            <mat-icon>videogame_asset</mat-icon>Piedra, papel y tijeras
+                    </a>
+                </mat-list-item>
+                <mat-list-item *ngIf="logUser">
                     <a (click)="snav.toggle(); signOut();">
                         <mat-icon>logout</mat-icon>
                         Logout

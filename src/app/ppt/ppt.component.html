@@ -1,15 +1,28 @@
 <!-- ng g m ppt -- route ppt --module app.module -->
 <h1>Piedra Papel Tijera</h1>
-<div [ngClass]="'juego'">
-    <div [ngClass]="'visor'">
-        <img [ngClass]="{'ani': true}" src="./../../assets/piedra-izq.jpg" >
-        <img src="./../../assets/piedra-der.jpg" >
-    </div>
-    
-    <div class="botonera">
-        <img (click)="select('piedra')" src="./../../assets/piedra-btn.png" >
-        <img (click)="select('papel')" src="./../../assets/papel-btn.png" >
-        <img (click)="select('tijera')" src="./../../assets/tijera-btn.png">
-    </div>
-</div>
+<main>
+    <div [ngClass]="'juego'">
+        <div [ngClass]="'hp'">
+            <h2>{{userEmail}} - Compu</h2>
+            <mat-progress-bar color="warn" mode="determinate" [value]="hp"></mat-progress-bar>
+        </div>
+        <div [ngClass]="'visor'">
+            <img [ngClass]="{'manoi':true,'ani': updown}" *ngIf="manoPlayer=='piedra'" src="./../../assets/piedra-izq.png" >
+            <img [ngClass]="{'manoi':true,'ani': updown}" *ngIf="manoPlayer=='papel'" src="./../../assets/papel-izq.png" >
+            <img [ngClass]="{'manoi':true,'ani': updown}" *ngIf="manoPlayer=='tijeras'" src="./../../assets/tijeras-izq.png" >
 
+            <img [ngClass]="{'manod':true,'ani': updown}" *ngIf="manoCompu=='piedra'" src="./../../assets/piedra-der.png" >
+            <img [ngClass]="{'manod':true,'ani': updown}" *ngIf="manoCompu=='papel'" src="./../../assets/papel-der.png" >
+            <img [ngClass]="{'manod':true,'ani': updown}" *ngIf="manoCompu=='tijeras'" src="./../../assets/tijeras-der.png" >
+        </div>
+        
+        <div class="botonera">
+            <img [ngClass]="'btn-piedra'" (click)="select('piedra')" src="./../../assets/piedra-btn.png" >
+            <img [ngClass]="'btn-papel'" (click)="select('papel')" src="./../../assets/papel-btn.png" >
+            <img [ngClass]="'btn-tijeras'" (click)="select('tijeras')" src="./../../assets/tijera-btn.png">
+        </div>
+    </div>
+    <div [ngClass]="'sidechat'">
+        <app-listado-rt></app-listado-rt>
+    </div>
+</main>
