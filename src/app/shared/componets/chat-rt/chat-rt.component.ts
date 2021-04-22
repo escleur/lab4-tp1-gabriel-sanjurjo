@@ -14,11 +14,22 @@ export class ChatRtComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.scrollToNew();
   }
   EnviarMensaje() {
     this.servicioRealTime.create(this.nuevoMensaje).then(()=>{
       console.log("se envio el mensaje RealTime");
+      this.nuevoMensaje.mensaje = "";
+      this.scrollToNew();
     });
+
+  }
+
+  scrollToNew(){
+    let item = document.getElementById("scrolleable");
+    if(item){
+      item.scrollTop = item.scrollHeight;
+    }
 
   }
 }

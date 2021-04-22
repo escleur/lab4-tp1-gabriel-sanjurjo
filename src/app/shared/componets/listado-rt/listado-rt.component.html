@@ -1,12 +1,15 @@
-<p>listado Real Time!</p>
-<ul class="list-group">
+
+<div class="chat">
+
+  <ul id="scrolleable" class="list-group">
     <li
       class="list-group-item"
       *ngFor="let mensaje of listadoMensajes; let i = index"
       [class.active]="i == currentIndex"
       
-    >
+      >
       {{ mensaje.mensaje }}
     </li>
   </ul>
   <app-chat-rt></app-chat-rt>
+</div>

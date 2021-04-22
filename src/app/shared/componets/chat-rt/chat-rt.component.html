@@ -1,3 +1,11 @@
-<p>Solo enviar mensaje</p>
+<!--<p>Solo enviar mensaje</p>
 <input type="text" [(ngModel)]="nuevoMensaje.mensaje">
 <button (click)="EnviarMensaje()">Enviar</button>
+-->
+<mat-form-field class="example-form-field">
+    <mat-label>Mensaje</mat-label>
+    <input matInput type="text" name="mensaje" (keyup.enter)="EnviarMensaje()" [(ngModel)]="nuevoMensaje.mensaje">
+    <button mat-button matSuffix mat-icon-button aria-label="Enviar" (click)="EnviarMensaje()">
+      <mat-icon>send</mat-icon>
+    </button>
+</mat-form-field>

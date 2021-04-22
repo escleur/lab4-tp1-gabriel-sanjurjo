@@ -1,0 +1,14 @@
+.chat{
+    top:0px;
+    bottom: 90px;
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list-group{
+    overflow: auto;
+    height: 600px;
+}

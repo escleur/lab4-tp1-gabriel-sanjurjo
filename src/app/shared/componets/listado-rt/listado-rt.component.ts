@@ -18,6 +18,7 @@ export class ListadoRtComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarMensajes();
+    
   }
 
   cargarMensajes(): void {
@@ -30,5 +31,7 @@ export class ListadoRtComponent implements OnInit {
     ).subscribe(data => {
       this.listadoMensajes = data;
     });
+
   }
+
 }
